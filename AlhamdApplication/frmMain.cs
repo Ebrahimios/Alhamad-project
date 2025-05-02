@@ -18,7 +18,7 @@ namespace AlhamdApplication
         public static int LoggedInEmployeeID;
         public static bool IsEmployeeAdmin;
         public static string EmployeeName;
-
+        private ScopedTranslator translator;
         // Other Date// frmMain.connectionString
         public static int UserControlWidth;
         public static int UserControlHeight;
@@ -28,10 +28,13 @@ namespace AlhamdApplication
         public frmMain()
         {
             InitializeComponent();
+            this.Tag = "title";
+            translator = new ScopedTranslator("frmMain", "en");
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            translator.Apply(this);
             pnlPanel.Height = 4000;
 
             frmLogin frmLogin = new frmLogin();

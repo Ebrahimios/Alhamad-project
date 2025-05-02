@@ -1,0 +1,19 @@
+{
+  "frmLogin": {
+    "title": "Login User",
+    "welcome": "welcome Back",
+    "login": "Login",
+    "error": "Phone number or password is incorrect! You can try again",
+    "errorTitle": "Error in phone number or password"
+  },
+  "frmMain": {
+    "title": "Alhamd for oils",
+    "employee": "Employees",
+    "products": "Products",
+    "suppliers": "Suppliers",
+    "customers": "Customers",
+    "expenses": "Expenses",
+    "dashboard": "Dashboard",
+    "employeeName": "Employee Name"
+  }
+}

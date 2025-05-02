@@ -81,7 +81,7 @@
             this.btnExpenses.Name = "btnExpenses";
             this.btnExpenses.Size = new System.Drawing.Size(231, 45);
             this.btnExpenses.TabIndex = 8;
-            this.btnExpenses.Text = "المصاريف";
+            this.btnExpenses.Tag = "expenses";
             this.btnExpenses.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExpenses.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnExpenses.Click += new System.EventHandler(this.btnExpenses_Click);
@@ -97,7 +97,7 @@
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(165, 31);
             this.lblEmployeeName.TabIndex = 5;
-            this.lblEmployeeName.Text = "اسم الموظف";
+            this.lblEmployeeName.Tag = "employeeName";
             this.lblEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblEmployeeName.Click += new System.EventHandler(this.lblEmployeeName_Click);
             // 
@@ -136,7 +136,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(231, 45);
             this.btnDashboard.TabIndex = 4;
-            this.btnDashboard.Text = "لوحة البيانات";
+            this.btnDashboard.Tag = "dashboard";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -160,7 +160,7 @@
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(231, 45);
             this.btnEmployee.TabIndex = 3;
-            this.btnEmployee.Text = "الموظفون";
+            this.btnEmployee.Text = "employee";
             this.btnEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEmployee.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
@@ -184,7 +184,7 @@
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(231, 45);
             this.btnSupplier.TabIndex = 2;
-            this.btnSupplier.Text = "الموردون";
+            this.btnSupplier.Tag = "suppliers";
             this.btnSupplier.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSupplier.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnSupplier.Click += new System.EventHandler(this.btnSupplier_Click);
@@ -208,7 +208,7 @@
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(231, 45);
             this.btnProduct.TabIndex = 1;
-            this.btnProduct.Text = "المنتجات";
+            this.btnProduct.Tag = "products";
             this.btnProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnProduct.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
@@ -232,7 +232,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(231, 45);
             this.btnCustomer.TabIndex = 0;
-            this.btnCustomer.Text = "العملاء";
+            this.btnCustomer.Tag = "customers";
             this.btnCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCustomer.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
@@ -270,7 +270,6 @@
             this.Name = "frmMain";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "الحمد للزيوت";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnlPanel.ResumeLayout(false);

@@ -14,9 +14,11 @@ namespace AlhamdApplication
     public partial class frmLogin : Form
     {
         public static string EmployeePhone;
+        private ScopedTranslator translator;
         public frmLogin()
         {
             InitializeComponent();
+            translator = new ScopedTranslator("frmLogin", "en");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -33,7 +35,7 @@ namespace AlhamdApplication
             }
             else
             {
-                MessageBox.Show("رقم الهاتف او كلمة المرور خاطئة! يمكنك المحاولة مرة أخرى", "خطأ في رقم الهاتف أو كلمة المرور", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               MessageBox.Show(translator.T("error"), translator.T("errorTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -100,6 +102,11 @@ namespace AlhamdApplication
             }
 
             return isValid;
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            translator.Apply(this);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,10 +19,24 @@ namespace AlhamdApplication
             InitializeComponent();
         }
 
-        private void ucCustomers_Load(object sender, EventArgs e)
+        private async void ucCustomers_Load(object sender, EventArgs e)
         {
-            this.customerTableAdapter.Fill(this.alhamdDBDataSet.Customer);
+            var httpClient = new HttpClient();
+            var apiClient = new Client("http://inventq.runasp.net", httpClient);
 
+            try
+            {
+                //AlhamdDBDataSet.CustomerDataTable summary = await apiClient.GetCustomersAsync(System.Threading.CancellationToken.None) as AlhamdDBDataSet.CustomerDataTable;
+                //MessageBox.Show($"Total users: {summary.Count}"); // على حسب الداتا اللي في DashboardSummaryDto
+                
+
+            }
+            catch (ApiException ex)
+            {
+                MessageBox.Show($"API Error: {ex.Message}");
+            }
+
+            this.customerTableAdapter.Fill(this.alhamdDBDataSet.Customer);
             int newWidth = (int)(this.Width * 0.8);
             newWidth = Math.Max(newWidth, 100);
             dgvCustomer.Width = newWidth;

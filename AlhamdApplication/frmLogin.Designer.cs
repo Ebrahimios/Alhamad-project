@@ -49,25 +49,25 @@
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(110)))), ((int)(((byte)(196)))));
             this.btnLogin.FocusedColor = System.Drawing.Color.DodgerBlue;
-            this.btnLogin.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.FillColor = System.Drawing.Color.DodgerBlue;
             this.btnLogin.Location = new System.Drawing.Point(96, 350);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(200, 45);
             this.btnLogin.TabIndex = 15;
-            this.btnLogin.Text = "تسجيل الدخول";
+            this.btnLogin.Tag = "login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(140, 160);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(124, 31);
+            this.lblWelcome.Size = new System.Drawing.Size(0, 20);
             this.lblWelcome.TabIndex = 10;
-            this.lblWelcome.Text = "مرحبا بكم مجددا";
+            this.lblWelcome.Tag = "welcome";
             // 
             // txtPassword
             // 
@@ -161,7 +161,8 @@
             this.RightToLeftLayout = true;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "تسجيل الدخول";
+            this.Tag = "title";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgProfile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgWallpaper)).EndInit();
             this.ResumeLayout(false);
