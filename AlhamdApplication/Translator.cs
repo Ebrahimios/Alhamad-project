@@ -1,58 +1,91 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
-
+using System.Linq;
+using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
     public class ScopedTranslator
     {
-        private Dictionary<string, string> _scopedTranslations;
+        private string _currentLangCode = "en";
+        private Dictionary<string, Dictionary<string, string>> _allTranslations = new Dictionary<string, Dictionary<string, string>>();
+        private List<ITranslatable> _subscribers = new List<ITranslatable>();
 
-        public ScopedTranslator(string scope, string langCode)
+        public static ScopedTranslator Instance { get; } = new ScopedTranslator();
+
+        private ScopedTranslator() => LoadLanguage(_currentLangCode);
+
+        public void SetLanguage(string langCode)
+        {
+            _currentLangCode = langCode;
+            LoadLanguage(langCode);
+            ApplyToAll();
+        }
+
+        public void Register(ITranslatable translatable)
+        {
+            if (!_subscribers.Contains(translatable))
+                _subscribers.Add(translatable);
+        }
+
+        public void Unregister(ITranslatable translatable)
+        {
+            _subscribers.Remove(translatable);
+        }
+
+        public string Translate(string scope, string key)
+        {
+            if (_allTranslations.TryGetValue(scope, out var dict) &&
+                dict.TryGetValue(key, out var val))
+                return val;
+
+            return key;
+        }
+
+        private void LoadLanguage(string langCode)
         {
             var baseDir = AppDomain.CurrentDomain.BaseDirectory;
             var projectRoot = Path.GetFullPath(Path.Combine(baseDir, @"..\.."));
-
             var path = Path.Combine(projectRoot, "Languages", $"{langCode}.json");
 
             if (File.Exists(path))
             {
-                var fullJson = File.ReadAllText(path);
-
-                var fullDict = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(fullJson);
-
-                if (fullDict != null && fullDict.ContainsKey(scope))
-                    _scopedTranslations = fullDict[scope];
-                else
-                    _scopedTranslations = new Dictionary<string, string>();
+                var json = File.ReadAllText(path);
+                _allTranslations = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json);
             }
             else
             {
-                _scopedTranslations = new Dictionary<string, string>();
+                _allTranslations = new Dictionary<string, Dictionary<string, string>>();
             }
         }
 
-        public string T(string key)
+        private void ApplyToAll()
         {
-            return _scopedTranslations.TryGetValue(key, out var val) ? val : key;
+            foreach (var subscriber in _subscribers)
+            {
+                Apply(subscriber);
+                subscriber.ApplyTranslation();
+            }
         }
 
-        public void Apply(Control parent)
+        private void Apply(ITranslatable item)
+        {
+            ApplyToControls(item.RootControl, item.Scope);
+        }
+
+        private void ApplyToControls(Control parent, string scope)
         {
             if (parent.Tag != null)
-                parent.Text = T(parent.Tag.ToString());
+                parent.Text = Translate(scope, parent.Tag.ToString());
 
             foreach (Control ctrl in parent.Controls)
             {
-                Apply(ctrl);
+                ApplyToControls(ctrl, scope);
             }
         }
-    }
 
+        public string CurrentLanguage => _currentLangCode;
+    }
 }

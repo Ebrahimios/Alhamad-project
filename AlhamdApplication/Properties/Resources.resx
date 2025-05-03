@@ -133,11 +133,11 @@
   <data name="dashboard-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dashboard-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phone-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phone-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="income-red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\income-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pexels-gabriel-peter-219375-719396" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-gabriel-peter-219375-719396.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +163,8 @@
   <data name="supplier-white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\supplier-white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="income-red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\income-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phone-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="login-profile-image" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\login-profile-image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -183,5 +183,8 @@
   </data>
   <data name="spending" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spending.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

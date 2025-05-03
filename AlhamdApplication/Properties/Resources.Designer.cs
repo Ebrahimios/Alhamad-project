@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlhamdApplication.Properties {
-    using System;
-    
-    
+namespace AlhamdApplication.Properties
+{
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -186,6 +186,16 @@ namespace AlhamdApplication.Properties {
         internal static System.Drawing.Bitmap income_red {
             get {
                 object obj = ResourceManager.GetObject("income-red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lang {
+            get {
+                object obj = ResourceManager.GetObject("lang", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

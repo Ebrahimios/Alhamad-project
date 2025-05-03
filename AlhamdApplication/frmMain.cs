@@ -12,8 +12,11 @@ using System.Configuration;
 
 namespace AlhamdApplication
 {
-    public partial class frmMain : Form
+    public partial class frmMain : Form, ITranslatable
     {
+        public string Scope => "frmMain";
+        public Control RootControl => this;
+
         // Employee Data
         public static int LoggedInEmployeeID;
         public static bool IsEmployeeAdmin;
@@ -29,12 +32,13 @@ namespace AlhamdApplication
         {
             InitializeComponent();
             this.Tag = "title";
-            translator = new ScopedTranslator("frmMain", "en");
+            ScopedTranslator.Instance.Register(this);
+
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            translator.Apply(this);
             pnlPanel.Height = 4000;
 
             frmLogin frmLogin = new frmLogin();
@@ -180,5 +184,16 @@ namespace AlhamdApplication
         {
 
         }
+
+        public void ApplyTranslation()
+        {
+        }
+
+        private void lang_Click(object sender, EventArgs e)
+        {
+            var newLang = ScopedTranslator.Instance.CurrentLanguage == "en" ? "ar" : "en";
+            ScopedTranslator.Instance.SetLanguage(newLang);
+        }
+
     }
 }

@@ -11,14 +11,17 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : Form, ITranslatable
     {
+        public string Scope => "frmLogin";
+        public Control RootControl => this;
         public static string EmployeePhone;
-        private ScopedTranslator translator;
+
         public frmLogin()
         {
             InitializeComponent();
-            translator = new ScopedTranslator("frmLogin", "en");
+            ScopedTranslator.Instance.Register(this);
+            ScopedTranslator.Instance.SetLanguage("en");
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -35,7 +38,7 @@ namespace AlhamdApplication
             }
             else
             {
-               MessageBox.Show(translator.T("error"), translator.T("errorTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(this.Scope, "error"), ScopedTranslator.Instance.Translate(this.Scope,"errorTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -106,7 +109,10 @@ namespace AlhamdApplication
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            translator.Apply(this);
+        }
+
+        public void ApplyTranslation()
+        {
         }
     }
 }

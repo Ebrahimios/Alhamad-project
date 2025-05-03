@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.langbtn = new Guna.UI2.WinForms.Guna2Button();
             this.btnExpenses = new Guna.UI2.WinForms.Guna2Button();
             this.lblEmployeeName = new System.Windows.Forms.Label();
             this.imgProfileImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -47,6 +48,7 @@
             // 
             // pnlPanel
             // 
+            this.pnlPanel.Controls.Add(this.langbtn);
             this.pnlPanel.Controls.Add(this.btnExpenses);
             this.pnlPanel.Controls.Add(this.lblEmployeeName);
             this.pnlPanel.Controls.Add(this.imgProfileImage);
@@ -61,6 +63,30 @@
             this.pnlPanel.Name = "pnlPanel";
             this.pnlPanel.Size = new System.Drawing.Size(237, 759);
             this.pnlPanel.TabIndex = 2;
+            // 
+            // langbtn
+            // 
+            this.langbtn.BackColor = System.Drawing.Color.Transparent;
+            this.langbtn.BorderRadius = 10;
+            this.langbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.langbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.langbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.langbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.langbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.langbtn.FillColor = System.Drawing.Color.Transparent;
+            this.langbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.langbtn.ForeColor = System.Drawing.Color.White;
+            this.langbtn.Image = global::AlhamdApplication.Properties.Resources.lang;
+            this.langbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.langbtn.ImageOffset = new System.Drawing.Point(10, 0);
+            this.langbtn.Location = new System.Drawing.Point(0, 555);
+            this.langbtn.Name = "langbtn";
+            this.langbtn.Size = new System.Drawing.Size(231, 45);
+            this.langbtn.TabIndex = 9;
+            this.langbtn.Tag = "lang";
+            this.langbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.langbtn.TextOffset = new System.Drawing.Point(-5, 0);
+            this.langbtn.Click += new System.EventHandler(this.lang_Click);
             // 
             // btnExpenses
             // 
@@ -160,7 +186,7 @@
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Size = new System.Drawing.Size(231, 45);
             this.btnEmployee.TabIndex = 3;
-            this.btnEmployee.Text = "employee";
+            this.btnEmployee.Tag = "employee";
             this.btnEmployee.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEmployee.TextOffset = new System.Drawing.Point(-5, 0);
             this.btnEmployee.Click += new System.EventHandler(this.btnEmployee_Click);
@@ -292,6 +318,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox imgLogo;
         private Guna.UI2.WinForms.Guna2Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button btnExpenses;
+        private Guna.UI2.WinForms.Guna2Button langbtn;
     }
 }
 
