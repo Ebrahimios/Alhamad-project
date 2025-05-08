@@ -12,30 +12,23 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class ucCustomers : UserControl
+    public partial class ucCustomers : UserControl, ITranslatable
     {
+        public string Scope => "ucCustomers";
+        public Control RootControl => this;
+
         public ucCustomers()
         {
             InitializeComponent();
+            ScopedTranslator.Instance.Register(this);
+        }
+
+        public void ApplyTranslation()
+        {
         }
 
         private async void ucCustomers_Load(object sender, EventArgs e)
-        {
-            var httpClient = new HttpClient();
-            var apiClient = new Client("http://inventq.runasp.net", httpClient);
-
-            try
-            {
-                //AlhamdDBDataSet.CustomerDataTable summary = await apiClient.GetCustomersAsync(System.Threading.CancellationToken.None) as AlhamdDBDataSet.CustomerDataTable;
-                //MessageBox.Show($"Total users: {summary.Count}"); // على حسب الداتا اللي في DashboardSummaryDto
-                
-
-            }
-            catch (ApiException ex)
-            {
-                MessageBox.Show($"API Error: {ex.Message}");
-            }
-
+        { 
             this.customerTableAdapter.Fill(this.alhamdDBDataSet.Customer);
             int newWidth = (int)(this.Width * 0.8);
             newWidth = Math.Max(newWidth, 100);

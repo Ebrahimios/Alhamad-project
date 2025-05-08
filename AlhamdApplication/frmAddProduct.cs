@@ -11,8 +11,14 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmAddProduct : Form
+    public partial class frmAddProduct : Form, ITranslatable
     {
+        public string Scope => "addProduct";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+
+        }
         private string ProductName => txtName.Text.Trim();
         private decimal ProductInitialPrice => Math.Round(txtInitialPrice.Value, 2);
         private decimal ProductPrice => Math.Round(txtPrice.Value, 2);
@@ -20,6 +26,13 @@ namespace AlhamdApplication
         public frmAddProduct()
         {
             InitializeComponent();
+            this.Tag = "title";
+            lblInitialPrice.Tag = "buy";
+            lblPrice.Tag = "sell";
+            lblName.Tag = "name";
+            btnAdd.Tag = "add";
+            btnCancel.Tag = "cancel";
+            lblTitle.Tag = "addProduct";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -102,6 +115,21 @@ namespace AlhamdApplication
                     return false;
                 }
             }
+        }
+
+        private void frmAddProduct_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

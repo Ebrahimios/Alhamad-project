@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmAddCustomer : Form
+    public partial class frmAddCustomer : Form, ITranslatable
     {
+        public string Scope => "frmAddCustomer";
+        public Control RootControl => this;
+        
+
         private string CustomerName => txtName.Text.Trim();
         private string CustomerPhone => txtPhone.Text.Trim();
         private string CustomerNotes => txtNotes.Text.Trim();
@@ -20,19 +24,30 @@ namespace AlhamdApplication
         public frmAddCustomer()
         {
             InitializeComponent();
+            this.Tag = "title";
+            lblName.Tag = "name";
+            lblPhone.Tag = "phone";
+            lblNotes.Tag = "notes";
+            btnAdd.Tag = "add";
+            btnCancel.Tag = "cancel";
+            ScopedTranslator.Instance.Register(this);
+
+        }
+        public void ApplyTranslation()
+        {
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!Validation.IsValidName(CustomerName))
             {
-                MessageBox.Show("اسم العميل غير صالح", "اسم غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "nameInvaild"), ScopedTranslator.Instance.Translate(Scope, "nameInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (IsNameExists(txtName.Text))
             {
-                MessageBox.Show("هذا الاسم موجود بالفعل", "اسم موجود", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "nameExists"), ScopedTranslator.Instance.Translate(Scope, "nameExistsTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -40,7 +55,7 @@ namespace AlhamdApplication
             {
                 if (!Validation.IsValidPhone(CustomerPhone))
                 {
-                    MessageBox.Show("رقم الهاتف غير صالح", "رقم هاتف غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "phoneInvaild"), ScopedTranslator.Instance.Translate(Scope, "phoneInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
@@ -105,6 +120,24 @@ namespace AlhamdApplication
                     return false;
                 }
             }
+        }
+
+        private void frmAddCustomer_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
+
+        }
+
+
+
+        private void frmAddCustomer_Shown(object sender, EventArgs e)
+        {
+
         }
     }
 }

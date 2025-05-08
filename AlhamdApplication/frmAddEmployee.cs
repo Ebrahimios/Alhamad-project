@@ -11,8 +11,13 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmAddEmployee : Form
+    public partial class frmAddEmployee : Form, ITranslatable
     {
+        public string Scope => "addEmployee";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+        }
         private string EmployeeName => txtName.Text.Trim();
         private string EmployeePhone => txtPhone.Text.Trim();
         private string EmployeePassword => txtPassword.Text.Trim();
@@ -21,37 +26,45 @@ namespace AlhamdApplication
         public frmAddEmployee()
         {
             InitializeComponent();
+            this.Tag = "title";
+            lblName.Tag = "name";
+            lblPhone.Tag = "phone";
+            lblPassword.Tag = "password";
+            btnAdd.Tag = "add";
+            btnCancel.Tag = "cancel";
+            lblTitle.Tag = "addEmployee";
+            ckIsAdmin.Tag = "isAdmin";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!Validation.IsValidName(EmployeeName))
             {
-                MessageBox.Show("اسم الموظف غير صالح", "اسم غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope,"nameInvaild"), ScopedTranslator.Instance.Translate(Scope, "nameInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (IsNameExists(EmployeeName))
             {
-                MessageBox.Show("هذا الاسم موجود بالفعل", "اسم موجود", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "nameExists"), ScopedTranslator.Instance.Translate(Scope, "nameExistsTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (!Validation.IsValidPhone(EmployeePhone))
             {
-                MessageBox.Show("رقم الهاتف غير صالح", "رقم هاتف غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "phoneInvaild"), ScopedTranslator.Instance.Translate(Scope, "phoneInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (IsPhoneExists(EmployeePhone))
             {
-                MessageBox.Show("رقم الهاتف موجود بالفعل", "رقم هاتف غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "phoneExists"), ScopedTranslator.Instance.Translate(Scope, "phoneExistsTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (!Validation.IsValidPassword(EmployeePassword))
             {
-                MessageBox.Show("يجب ادخال كلمة المرور بشكل صحيح, 5 احرف انجليزية او ارقام", "تحذير", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "passwordInvaild"), ScopedTranslator.Instance.Translate(Scope, "passwordInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -141,6 +154,11 @@ namespace AlhamdApplication
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }

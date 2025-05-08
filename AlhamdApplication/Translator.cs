@@ -9,7 +9,7 @@ namespace AlhamdApplication
 {
     public class ScopedTranslator
     {
-        private string _currentLangCode = "en";
+        private string _currentLangCode = "ar";
         private Dictionary<string, Dictionary<string, string>> _allTranslations = new Dictionary<string, Dictionary<string, string>>();
         private List<ITranslatable> _subscribers = new List<ITranslatable>();
 
@@ -77,15 +77,49 @@ namespace AlhamdApplication
 
         private void ApplyToControls(Control parent, string scope)
         {
-            if (parent.Tag != null)
+            if (parent.Tag != null && !(parent is TextBox) && !(parent is Guna.UI2.WinForms.Guna2TextBox))
+            {
                 parent.Text = Translate(scope, parent.Tag.ToString());
+            }
 
             foreach (Control ctrl in parent.Controls)
             {
+                if (ctrl is DataGridView dataGridView)
+                {
+                    foreach (DataGridViewColumn column in dataGridView.Columns)
+                    {
+                        if (column.Tag != null)
+                        {
+                            string translated = Translate(scope, column.Tag.ToString());
+                            column.HeaderText = translated;
+
+                            if (column is DataGridViewButtonColumn buttonColumn)
+                            {
+                                buttonColumn.Text = translated;
+                            }
+                        }
+                    }
+                }
+                else if (ctrl is Guna.UI2.WinForms.Guna2TextBox txt)
+                {
+                    if (txt.Tag != null)
+                        txt.PlaceholderText = Translate(scope, txt.Tag.ToString());
+                }
+                else if (ctrl is ITranslatable translatable)
+                {
+                    Apply(translatable);
+                }
+
+                // recursive call
                 ApplyToControls(ctrl, scope);
             }
         }
 
+        public void ApplyOnce(ITranslatable translatable)
+        {
+            Apply(translatable);
+            translatable.ApplyTranslation();
+        }
         public string CurrentLanguage => _currentLangCode;
     }
 }

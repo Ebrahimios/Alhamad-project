@@ -123,7 +123,7 @@
             this.lblEmployeeName.Name = "lblEmployeeName";
             this.lblEmployeeName.Size = new System.Drawing.Size(165, 31);
             this.lblEmployeeName.TabIndex = 5;
-            this.lblEmployeeName.Tag = "employeeName";
+            this.lblEmployeeName.Text = "اسم الموظف";
             this.lblEmployeeName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblEmployeeName.Click += new System.EventHandler(this.lblEmployeeName_Click);
             // 

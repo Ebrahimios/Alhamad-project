@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCustomerEndDate = new System.Windows.Forms.Label();
             this.dtpCustomerEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblCustomerStartDate = new System.Windows.Forms.Label();
@@ -62,11 +62,11 @@
             // lblCustomerEndDate
             // 
             this.lblCustomerEndDate.AutoSize = true;
-            this.lblCustomerEndDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F);
+            this.lblCustomerEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblCustomerEndDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblCustomerEndDate.Location = new System.Drawing.Point(474, 82);
             this.lblCustomerEndDate.Name = "lblCustomerEndDate";
-            this.lblCustomerEndDate.Size = new System.Drawing.Size(33, 27);
+            this.lblCustomerEndDate.Size = new System.Drawing.Size(22, 17);
             this.lblCustomerEndDate.TabIndex = 64;
             this.lblCustomerEndDate.Text = "الي";
             this.lblCustomerEndDate.Visible = false;
@@ -92,11 +92,11 @@
             // lblCustomerStartDate
             // 
             this.lblCustomerStartDate.AutoSize = true;
-            this.lblCustomerStartDate.Font = new System.Drawing.Font("Droid Arabic Kufi", 10F);
+            this.lblCustomerStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblCustomerStartDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblCustomerStartDate.Location = new System.Drawing.Point(743, 82);
             this.lblCustomerStartDate.Name = "lblCustomerStartDate";
-            this.lblCustomerStartDate.Size = new System.Drawing.Size(30, 27);
+            this.lblCustomerStartDate.Size = new System.Drawing.Size(20, 17);
             this.lblCustomerStartDate.TabIndex = 61;
             this.lblCustomerStartDate.Text = "من";
             this.lblCustomerStartDate.Visible = false;
@@ -145,17 +145,17 @@
             this.dgvCustomerTransactions.AllowUserToAddRows = false;
             this.dgvCustomerTransactions.AllowUserToDeleteRows = false;
             this.dgvCustomerTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvCustomerTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            this.dgvCustomerTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCustomerTransactions.AutoGenerateColumns = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomerTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomerTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvCustomerTransactions.ColumnHeadersHeight = 35;
             this.dgvCustomerTransactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvTransactionId,
@@ -167,21 +167,21 @@
             this.dgvDate});
             this.dgvCustomerTransactions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgvCustomerTransactions.DataSource = this.customerTransactionBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomerTransactions.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomerTransactions.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCustomerTransactions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCustomerTransactions.Location = new System.Drawing.Point(198, 134);
             this.dgvCustomerTransactions.Name = "dgvCustomerTransactions";
             this.dgvCustomerTransactions.ReadOnly = true;
             this.dgvCustomerTransactions.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCustomerTransactions.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCustomerTransactions.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCustomerTransactions.RowTemplate.Height = 35;
             this.dgvCustomerTransactions.Size = new System.Drawing.Size(778, 342);
             this.dgvCustomerTransactions.TabIndex = 59;
@@ -254,9 +254,9 @@
             // dgvDate
             // 
             this.dgvDate.DataPropertyName = "TransactionDate";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = "dd/MM/yyyy";
-            this.dgvDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = "dd/MM/yyyy";
+            this.dgvDate.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDate.HeaderText = "التاريخ";
             this.dgvDate.Name = "dgvDate";
             this.dgvDate.ReadOnly = true;
@@ -318,24 +318,26 @@
             // lblTotalProfit
             // 
             this.lblTotalProfit.AutoSize = true;
-            this.lblTotalProfit.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProfit.ForeColor = System.Drawing.Color.Black;
             this.lblTotalProfit.Location = new System.Drawing.Point(875, 0);
             this.lblTotalProfit.Name = "lblTotalProfit";
-            this.lblTotalProfit.Size = new System.Drawing.Size(104, 25);
+            this.lblTotalProfit.Size = new System.Drawing.Size(85, 16);
             this.lblTotalProfit.TabIndex = 67;
             this.lblTotalProfit.Text = "اجمالي المبيعات";
+            this.lblTotalProfit.Click += new System.EventHandler(this.lblTotalProfit_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(617, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 25);
+            this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 68;
             this.label1.Text = "مبالغ متبقية";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // customerTransactionTableAdapter
             // 

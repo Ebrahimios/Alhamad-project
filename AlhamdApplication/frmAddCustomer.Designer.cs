@@ -43,42 +43,38 @@
             // lblNotes
             // 
             this.lblNotes.AutoSize = true;
-            this.lblNotes.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotes.Location = new System.Drawing.Point(34, 268);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(61, 25);
+            this.lblNotes.Size = new System.Drawing.Size(0, 16);
             this.lblNotes.TabIndex = 14;
-            this.lblNotes.Text = "ملاحظات";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(34, 186);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 25);
+            this.lblPhone.Size = new System.Drawing.Size(0, 16);
             this.lblPhone.TabIndex = 12;
-            this.lblPhone.Text = "رقم الهاتف";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(34, 99);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(45, 25);
+            this.lblName.Size = new System.Drawing.Size(0, 16);
             this.lblName.TabIndex = 10;
-            this.lblName.Text = "الاسم";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Droid Arabic Kufi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(33, 38);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(96, 31);
+            this.lblTitle.Size = new System.Drawing.Size(0, 20);
             this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "اضافة عميل";
             // 
             // btnCancel
             // 
@@ -95,7 +91,6 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(114, 45);
             this.btnCancel.TabIndex = 17;
-            this.btnCancel.Text = "الغاء";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAdd
@@ -113,7 +108,6 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(114, 45);
             this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "اضافة";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtNotes
@@ -201,6 +195,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "اضافة عميل جديد";
+            this.Load += new System.EventHandler(this.frmAddCustomer_Load);
+            this.Shown += new System.EventHandler(this.frmAddCustomer_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

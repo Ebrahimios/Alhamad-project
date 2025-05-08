@@ -11,8 +11,13 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmAddSupplier : Form
+    public partial class frmAddSupplier : Form, ITranslatable
     {
+        public string Scope => "frmAddSupplier";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+        }
         private string SupplierName => txtName.Text.Trim();
         private string SupplierPhone => txtPhone.Text.Trim();
         private string SupplierNotes => txtNotes.Text.Trim();
@@ -20,6 +25,13 @@ namespace AlhamdApplication
         public frmAddSupplier()
         {
             InitializeComponent();
+            this.Tag = "title";
+            lblTitle.Tag = "addSupplier";
+            lblName.Tag = "name";
+            lblPhone.Tag = "phone";
+            lblNotes.Tag = "notes";
+            btnAdd.Tag = "add";
+            btnCancel.Tag = "cancel";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -102,6 +114,12 @@ namespace AlhamdApplication
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
+
         }
     }
 }

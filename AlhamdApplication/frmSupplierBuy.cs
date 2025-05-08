@@ -14,8 +14,16 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmSupplierBuy : Form
+    public partial class frmSupplierBuy : Form, ITranslatable
+
     {
+        public string Scope => "frmCustomerSell";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+            // Apply translation logic here
+            // Example: this.Text = translator.Translate(Scope, "formTitle");
+        }
         private string _supplierID;
         private string _supplierName;
         private string _employeeID;
@@ -24,6 +32,23 @@ namespace AlhamdApplication
         public frmSupplierBuy(string supplierId)
         {
             InitializeComponent();
+            this.Tag = "title";
+            lblPercentageDiscount.Tag = "lblPercentageDiscount";
+            lblValueDiscount.Tag = "lblValueDiscount";
+            lblRecievedMoney.Tag = "lblRecievedMoney";
+            lblTotalPrice.Tag = "lblTotalPrice";
+            lblFinalPrice.Tag = "lblFinalPrice";
+            lblProductName.Tag = "lblProductName";
+            lblQuantity.Tag = "lblQuantity";
+            btnAdd.Tag = "btnAdd";
+            btnSave.Tag = "btnSave";
+            btnPdf.Tag = "btnPdf";
+            dgvDelete.Tag = "dgvDelete";
+            dgvName.Tag = "dgvName";
+            dgvQuantity.Tag = "dgvQuantity";
+            dgvPrice.Tag = "dgvPrice";
+            dgvTotalPrice.Tag = "dgvTotalPrice";
+
             _supplierID = supplierId;
             _supplierName = GetSupplierNameById(_supplierID);
             _employeeID = frmMain.LoggedInEmployeeID.ToString();
@@ -506,6 +531,11 @@ namespace AlhamdApplication
                 MessageBox.Show("المبلغ المستلم اكبر من المبلغ الكلي", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtRecievedMoney.Value = 0;
             }
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }

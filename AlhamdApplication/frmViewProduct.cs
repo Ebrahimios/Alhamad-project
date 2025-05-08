@@ -11,14 +11,29 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmViewProduct : Form
+    public partial class frmViewProduct : Form, ITranslatable
     {
+        public string Scope => "frmViewProduct";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+            // Implement translation logic here
+        }
         private string _productID;
 
         public frmViewProduct(string id)
         {
             _productID = id;
             InitializeComponent();
+            this.Tag = "title";
+            lblName.Tag = "lblName";
+            lblInitialPrice.Tag = "lblInitialPrice";
+            lblPrice.Tag = "lblPrice";
+            lblPayedQuantity.Tag = "lblPayedQuantity";
+            lblAvaliableQuantity.Tag = "lblAvaliableQuantity";
+            btnEdit.Tag = "btnEdit";
+            btnSave.Tag = "btnSave";
+            
         }
 
         private void frmViewProduct_Load(object sender, EventArgs e)
@@ -252,6 +267,11 @@ namespace AlhamdApplication
             {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
 
     }

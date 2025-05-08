@@ -176,60 +176,60 @@
             // lblRecievedMoney
             // 
             this.lblRecievedMoney.AutoSize = true;
-            this.lblRecievedMoney.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecievedMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecievedMoney.Location = new System.Drawing.Point(34, 188);
             this.lblRecievedMoney.Name = "lblRecievedMoney";
-            this.lblRecievedMoney.Size = new System.Drawing.Size(94, 25);
+            this.lblRecievedMoney.Size = new System.Drawing.Size(70, 16);
             this.lblRecievedMoney.TabIndex = 27;
             this.lblRecievedMoney.Text = "المبلغ المستلم";
             // 
             // lblPercentageDiscount
             // 
             this.lblPercentageDiscount.AutoSize = true;
-            this.lblPercentageDiscount.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentageDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentageDiscount.Location = new System.Drawing.Point(225, 109);
             this.lblPercentageDiscount.Name = "lblPercentageDiscount";
-            this.lblPercentageDiscount.Size = new System.Drawing.Size(91, 25);
+            this.lblPercentageDiscount.Size = new System.Drawing.Size(73, 16);
             this.lblPercentageDiscount.TabIndex = 25;
             this.lblPercentageDiscount.Text = "الخصم بالنسبة";
             // 
             // lblValueDiscount
             // 
             this.lblValueDiscount.AutoSize = true;
-            this.lblValueDiscount.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblValueDiscount.Location = new System.Drawing.Point(34, 109);
             this.lblValueDiscount.Name = "lblValueDiscount";
-            this.lblValueDiscount.Size = new System.Drawing.Size(92, 25);
+            this.lblValueDiscount.Size = new System.Drawing.Size(71, 16);
             this.lblValueDiscount.TabIndex = 23;
             this.lblValueDiscount.Text = "الخصم بالقيمة";
             // 
             // lblFinalPrice
             // 
             this.lblFinalPrice.AutoSize = true;
-            this.lblFinalPrice.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFinalPrice.Location = new System.Drawing.Point(225, 32);
             this.lblFinalPrice.Name = "lblFinalPrice";
-            this.lblFinalPrice.Size = new System.Drawing.Size(107, 25);
+            this.lblFinalPrice.Size = new System.Drawing.Size(84, 16);
             this.lblFinalPrice.TabIndex = 21;
             this.lblFinalPrice.Text = "السعر بعد الخصم";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPrice.Location = new System.Drawing.Point(34, 32);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(109, 25);
+            this.lblTotalPrice.Size = new System.Drawing.Size(86, 16);
             this.lblTotalPrice.TabIndex = 20;
             this.lblTotalPrice.Text = "السعر قبل الخصم";
             // 
             // lblQuantity
             // 
             this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.Location = new System.Drawing.Point(203, 315);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(49, 25);
+            this.lblQuantity.Size = new System.Drawing.Size(36, 16);
             this.lblQuantity.TabIndex = 32;
             this.lblQuantity.Text = "الكمية";
             // 
@@ -255,10 +255,10 @@
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.Location = new System.Drawing.Point(34, 315);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(45, 25);
+            this.lblProductName.Size = new System.Drawing.Size(36, 16);
             this.lblProductName.TabIndex = 30;
             this.lblProductName.Text = "المنتج";
             // 
@@ -286,7 +286,7 @@
             this.dgvPayedProducts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -315,7 +315,7 @@
             this.dgvPayedProducts.Name = "dgvPayedProducts";
             this.dgvPayedProducts.ReadOnly = true;
             this.dgvPayedProducts.RowHeadersVisible = false;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvPayedProducts.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPayedProducts.RowTemplate.Height = 35;
             this.dgvPayedProducts.Size = new System.Drawing.Size(537, 413);
@@ -482,6 +482,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "فاتورة جديدة";
+            this.Load += new System.EventHandler(this.frmCustomerSell_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtFinalPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRecievedMoney)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPercentageDiscount)).EndInit();

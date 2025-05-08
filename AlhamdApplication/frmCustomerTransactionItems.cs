@@ -11,14 +11,30 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmCustomerTransactionItems : Form
+    public partial class frmCustomerTransactionItems : Form, ITranslatable
     {
+        public string Scope => "frmCustomerTransactionItems";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+            // Apply translation logic here
+            // Example: this.Text = translator.Translate(Scope, "formTitle");
+        }
         private string _transactionID;
 
         public frmCustomerTransactionItems(string transactionId)
         {
             _transactionID = transactionId;
             InitializeComponent();
+            this.Tag = "title";
+            dgvPayedProducts.Tag = "dgvPayedProducts";
+            dgvProductName.Tag = "dgvProductName";
+            dgvQuantity.Tag = "dgvQuantity";
+            dgvUnitPrice.Tag = "dgvUnitPrice";
+            dgvTotalPrice.Tag = "dgvTotalPrice";
+            btnSave.Tag = "btnSave";
+
+
         }
 
         private void frmCustomerTransactionItems_Load(object sender, EventArgs e)
@@ -163,5 +179,11 @@ namespace AlhamdApplication
         {
             this.Close();
         }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
+        }
+
     }
 }

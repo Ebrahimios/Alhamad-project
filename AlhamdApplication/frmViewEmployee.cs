@@ -11,14 +11,27 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmViewEmployee : Form
+    public partial class frmViewEmployee : Form, ITranslatable
     {
+        public string Scope => "frmViewEmployee";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+        }
         private string _employeeID;
 
         public frmViewEmployee(string id)
         {
             _employeeID = id;
             InitializeComponent();
+            this.Tag = "title";
+            lblName.Tag = "lblName";
+            lblPhone.Tag = "lblPhone";
+            lblPassword.Tag = "lblPassword";
+            ckIsAdmin.Tag = "ckIsAdmin";
+            btnEdit.Tag = "btnEdit";
+            btnSave.Tag = "btnSave";
+
         }
 
         private void frmViewEmployee_Load(object sender, EventArgs e)
@@ -205,6 +218,16 @@ namespace AlhamdApplication
                     return false;
                 }
             }
+        }
+
+        private void ckIsAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }

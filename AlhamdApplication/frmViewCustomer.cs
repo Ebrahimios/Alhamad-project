@@ -15,8 +15,15 @@ using iTextSharp.text;
 
 namespace AlhamdApplication
 {
-    public partial class frmViewCustomer : Form
+    public partial class frmViewCustomer : Form, ITranslatable
     {
+        public string Scope => "frmViewCustomer";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+            // Apply translation logic here
+            // Example: this.Text = translator.Translate(Scope, "formTitle");
+        }
         private string _customerID;
         private string _customerName;
 
@@ -24,6 +31,25 @@ namespace AlhamdApplication
         {
             _customerID = id;
             InitializeComponent();
+            this.Tag = "title";
+            lblNameTitle.Tag = "lblCustomerName";
+            lblPhoneTitle.Tag = "lblCustomerPhone";
+            lblNotes.Tag = "lblNotes";
+            lblTotalSalesValue.Tag = "lblTotalSalesValue";
+            lblRecievedMoney.Tag = "lblRecievedMoney";
+            lblRemainingMoneyValue.Tag = "lblRemainingMoneyValue";
+            btnEdit.Tag = "btnEdit";
+            btnSave.Tag = "btnSave";
+            btnGeneratePdf.Tag = "btnGeneratePdf";
+            cbTransactionSelector.Tag = "cbTransactionSelector";
+            lblCustomerStartDate.Tag = "lblCustomerStartDate";
+            lblCustomerEndDate.Tag = "lblCustomerEndDate";
+            dgvId.Tag = "dgvId";
+            dgvDate.Tag = "dgvDate";
+            dgvTotalPrice.Tag = "dgvTotalPrice";
+            dgvPayedMoney.Tag = "dgvPaidMoney";
+            dgvRemainingMoney.Tag = "dgvRemainingMoney";
+            dgvDelete.Tag = "dgvDelete";
         }
 
         private void frmViewCustomer_Load(object sender, EventArgs e)
@@ -757,6 +783,11 @@ WHERE cti.TransactionID = @TransactionID";
         private void customerTransactionBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }

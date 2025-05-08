@@ -51,8 +51,8 @@ namespace AlhamdApplication
 
             panelContainer.Height = this.Height;
             panelContainer.Width = this.Width - pnlPanel.Width;
-
-            lblEmployeeName.Text = frmMain.EmployeeName;
+            EmployeeName = 
+            lblEmployeeName.Text = EmployeeName;
 
             DefaultContent();
         }

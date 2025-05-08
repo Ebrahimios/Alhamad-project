@@ -78,30 +78,30 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(40, 205);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(75, 25);
+            this.lblPassword.Size = new System.Drawing.Size(62, 16);
             this.lblPassword.TabIndex = 17;
             this.lblPassword.Text = "كلمة المرور";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(40, 127);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 25);
+            this.lblPhone.Size = new System.Drawing.Size(58, 16);
             this.lblPhone.TabIndex = 15;
             this.lblPhone.Text = "رقم الهاتف";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(40, 48);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(86, 25);
+            this.lblName.Size = new System.Drawing.Size(62, 16);
             this.lblName.TabIndex = 13;
             this.lblName.Text = "اسم الموظف";
             // 
@@ -109,13 +109,14 @@
             // 
             this.ckIsAdmin.AutoSize = true;
             this.ckIsAdmin.Enabled = false;
-            this.ckIsAdmin.Font = new System.Drawing.Font("Droid Arabic Kufi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckIsAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckIsAdmin.Location = new System.Drawing.Point(42, 295);
             this.ckIsAdmin.Name = "ckIsAdmin";
-            this.ckIsAdmin.Size = new System.Drawing.Size(181, 29);
+            this.ckIsAdmin.Size = new System.Drawing.Size(160, 20);
             this.ckIsAdmin.TabIndex = 23;
             this.ckIsAdmin.Text = "السماح بعرض لوحة البيانات";
             this.ckIsAdmin.UseVisualStyleBackColor = true;
+            this.ckIsAdmin.CheckedChanged += new System.EventHandler(this.ckIsAdmin_CheckedChanged);
             // 
             // txtPhone
             // 

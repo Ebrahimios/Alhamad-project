@@ -11,27 +11,39 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmAddExpenses : Form
+    public partial class frmAddExpenses : Form, ITranslatable
+
     {
+        public string Scope => "addExpenses";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+        }
         private string SupplierName => txtExpensesType.Text.Trim();
         private decimal ExpensesValue => txtExpenses.Value;
 
         public frmAddExpenses()
         {
             InitializeComponent();
+            lblTitle.Tag = "addExpenses";
+            lblName.Tag = "name";
+            label1.Tag = "value";
+            this.Tag = "title";
+            btnAdd.Tag = "add";
+            btnCancel.Tag = "cancel";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!Validation.IsValidName(txtExpensesType.Text))
             {
-                MessageBox.Show("يجب ادخال اسم المصاريف بشكل صحيح", "اسم غير صالح", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope,"nameInvaild"), ScopedTranslator.Instance.Translate(Scope, "nameInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
             if (txtExpenses.Value < 1)
             {
-                MessageBox.Show("يجب ادخال قيمة المصاريف بشكل صحيح", "قيم غير صالحة", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ScopedTranslator.Instance.Translate(Scope, "amountInvaild"), ScopedTranslator.Instance.Translate(Scope, "amountInvaildTitle"), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -70,6 +82,11 @@ namespace AlhamdApplication
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }

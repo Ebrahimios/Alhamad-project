@@ -10,11 +10,30 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class ucCustomerTransactions : UserControl
+    public partial class ucCustomerTransactions : UserControl, ITranslatable
     {
+        public string Scope => "ucCustomerTransactions";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+            // Apply translation logic here
+            // Example: this.Text = translator.Translate(Scope, "formTitle");
+        }
         public ucCustomerTransactions()
         {
             InitializeComponent();
+            lblCustomerEndDate.Tag = "lblCustomerEndDate";
+            lblCustomerStartDate.Tag = "lblCustomerStartDate";
+            label1.Text = "lblCustomerTransactions";
+            lblTotalProfit.Tag = "lblTotalProfit";
+            dgvCustomerName.Tag = "dgvCustomerName";
+            dgvDate.Tag = "dgvDate";
+            dgvTotalPrice.Tag = "dgvTotalPrice";
+            dgvRemainingMoney.Tag = "dgvRemainingMoney";
+            dgvPaidMoney.Tag = "dgvPaidMoney";
+            dgvEmployeeName.Tag = "dgvEmployeeName";
+            ScopedTranslator.Instance.Register(this);
+
         }
 
         private void ucCustomerTransactions_Load(object sender, EventArgs e)
@@ -144,6 +163,16 @@ namespace AlhamdApplication
                 cbTransactionSelector.SelectedIndex = 0;
                 this.customerTransactionTableAdapter.Fill(this.alhamdDBDataSet.CustomerTransaction);
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalProfit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

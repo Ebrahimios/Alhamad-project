@@ -139,14 +139,16 @@
             // dgvName
             // 
             this.dgvName.DataPropertyName = "Name";
-            this.dgvName.HeaderText = "اسم العميل";
+            this.dgvName.HeaderText = "Customer Name";
+            this.dgvName.Tag = "customerName";
             this.dgvName.Name = "dgvName";
             this.dgvName.ReadOnly = true;
             // 
             // dgvPhone
             // 
             this.dgvPhone.DataPropertyName = "Phone";
-            this.dgvPhone.HeaderText = "رقم الهاتف";
+            this.dgvPhone.HeaderText = "Phone Number";
+            this.dgvPhone.Tag = "customerPhone";
             this.dgvPhone.Name = "dgvPhone";
             this.dgvPhone.ReadOnly = true;
             // 
@@ -158,10 +160,11 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             this.dgvSell.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSell.FillWeight = 95.29106F;
-            this.dgvSell.HeaderText = "بيع منتج";
+            this.dgvSell.HeaderText = "Sell";
+            this.dgvSell.Text = "Sell";
+            this.dgvSell.Tag = "sell";
             this.dgvSell.Name = "dgvSell";
             this.dgvSell.ReadOnly = true;
-            this.dgvSell.Text = "بيع منتج";
             this.dgvSell.UseColumnTextForButtonValue = true;
             this.dgvSell.Width = 80;
             // 
@@ -174,7 +177,8 @@
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
             this.dgvShow.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvShow.FillWeight = 102.9379F;
-            this.dgvShow.HeaderText = "عرض";
+            this.dgvShow.HeaderText = "Show";
+            this.dgvShow.Tag = "show";
             this.dgvShow.Image = global::AlhamdApplication.Properties.Resources.show;
             this.dgvShow.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgvShow.Name = "dgvShow";
@@ -190,7 +194,8 @@
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
             this.dgvDelete.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDelete.FillWeight = 106.599F;
-            this.dgvDelete.HeaderText = "حذف";
+            this.dgvDelete.HeaderText = "Delete";
+            this.dgvDelete.Tag = "delete";
             this.dgvDelete.Image = global::AlhamdApplication.Properties.Resources.delete;
             this.dgvDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgvDelete.Name = "dgvDelete";
@@ -261,8 +266,9 @@
             this.txtSearchBar.Location = new System.Drawing.Point(478, 86);
             this.txtSearchBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchBar.Name = "txtSearchBar";
+            this.txtSearchBar.Tag = "search";
             this.txtSearchBar.PasswordChar = '\0';
-            this.txtSearchBar.PlaceholderText = "اسم العميل او  الرقم";
+            this.txtSearchBar.PlaceholderText = "Customer Name or Phone Number";
             this.txtSearchBar.SelectedText = "";
             this.txtSearchBar.Size = new System.Drawing.Size(507, 45);
             this.txtSearchBar.TabIndex = 5;
@@ -284,7 +290,8 @@
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(121, 45);
             this.btnAddCustomer.TabIndex = 6;
-            this.btnAddCustomer.Text = "عميل جديد";
+            this.btnAddCustomer.Text = "Add Customer";
+            this.btnAddCustomer.Tag = "add";
             this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // ucCustomers

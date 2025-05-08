@@ -14,8 +14,13 @@ using System.Windows.Forms;
 
 namespace AlhamdApplication
 {
-    public partial class frmViewSupplier : Form
+    public partial class frmViewSupplier : Form,ITranslatable
     {
+        public string Scope => "frmViewSupplier";
+        public Control RootControl => this;
+        public void ApplyTranslation()
+        {
+        }
         private string _supplierID;
         private string _supplierName;
 
@@ -24,6 +29,25 @@ namespace AlhamdApplication
             _supplierID = id;
 
             InitializeComponent();
+            this.Tag = "title";
+            lblNameTitle.Tag = "lblCustomerName";
+            lblPhoneTitle.Tag = "lblCustomerPhone";
+            lblNotes.Tag = "lblNotes";
+            lblTotalSalesValue.Tag = "lblTotalSalesValue";
+            lblRecievedMoney.Tag = "lblRecievedMoney";
+            lblRemainingMoneyValue.Tag = "lblRemainingMoneyValue";
+            btnEdit.Tag = "btnEdit";
+            btnSave.Tag = "btnSave";
+            btnGeneratePdf.Tag = "btnGeneratePdf";
+            cbTransactionSelector.Tag = "cbTransactionSelector";
+            lblStartDate.Tag = "lblCustomerStartDate";
+            lblEndDate.Tag = "lblCustomerEndDate";
+            dgvId.Tag = "dgvId";
+            dgvDate.Tag = "dgvDate";
+            dgvTotalPrice.Tag = "dgvTotalPrice";
+            dgvPaidMoney.Tag = "dgvPaidMoney";
+            dgvRemainingMoney.Tag = "dgvRemainingMoney";
+            dgvDelete.Tag = "dgvDelete";
         }
 
         private void frmViewSupplier_Load(object sender, EventArgs e)
@@ -748,6 +772,11 @@ WHERE sti.TransactionID = @TransactionID";
             lblTotalSalesValue.Text = CalculateSupplierTotalBought(_supplierID).ToString();
             lblRecievedMoney.Text = CalculateSupplierPaidMoney(_supplierID).ToString();
             lblRemainingMoneyValue.Text = CalculateSupplierRemainingMoney(_supplierID).ToString();
+        }
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+            ScopedTranslator.Instance.ApplyOnce(this);
         }
     }
 }
